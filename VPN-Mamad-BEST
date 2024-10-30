@@ -139,7 +139,7 @@
         },
 		{
 			  "type": "hysteria2",
-			  "tag": "A1",
+			  "tag": "RazTahlil",
 			  "server": "62.60.217.48",
 			  "server_port": 22334,
 			  "obfs": {
