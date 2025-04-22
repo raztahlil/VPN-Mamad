@@ -1,4 +1,3 @@
-
 {
   "dns": {
     "final": "local-dns",
@@ -85,7 +84,7 @@
       "outbounds": [
         "auto",
         "direct",
-        "Tel\u0026YouTube:@Mikronet_plus"
+        "Telegram\u0026YouTube:@Mikronet_plus"
       ],
       "tag": "proxy",
       "type": "selector"
@@ -93,7 +92,7 @@
     {
       "interval": "10m",
       "outbounds": [
-        "Tel\u0026YouTube:@Mikronet_plus"
+        "Telegram\u0026YouTube:@Mikronet_plus"
       ],
       "tag": "auto",
       "tolerance": 50,
@@ -114,13 +113,13 @@
     },
     {
       "obfs": {
-        "password": "Telegram:@Mikronet_plus",
+        "password": "Telegram:Mikronet_pluss",
         "type": "salamander"
       },
-      "password": "Telegram:Mikronet_plus",
+      "password": "Telegram:Mikronet-plus",
       "server": "mikronetplus.mikronetplus.store",
-      "server_port": 51368,
-      "tag": "Tel\u0026YouTube:@Mikronet_plus",
+      "server_port": 3678,
+      "tag": "Telegram\u0026YouTube:@Mikronet_plus",
       "tls": {
         "enabled": true,
         "insecure": true
