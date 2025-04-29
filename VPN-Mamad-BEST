@@ -1,3 +1,4 @@
+
 {
   "dns": {
     "final": "local-dns",
@@ -43,7 +44,7 @@
         "tag": "block"
       },
       {
-        "address": "direct-dns",
+        "address": "tcp://8.8.8.8",
         "detour": "direct",
         "tag": "direct-dns"
       }
@@ -66,7 +67,6 @@
           "server_port": 2080
         }
       },
-      "sniff": true,
       "stack": "system",
       "strict_route": false,
       "type": "tun"
@@ -74,7 +74,6 @@
     {
       "listen": "127.0.0.1",
       "listen_port": 2080,
-      "sniff": true,
       "type": "mixed",
       "users": []
     }
@@ -84,7 +83,10 @@
       "outbounds": [
         "auto",
         "direct",
-        "Telegram\u0026YouTube:@Mikronet_plus"
+        "2.Hysteria2 channel Server 2",
+        "3.Hysteria2 channel Server 3",
+        "4.Hysteria2 channel Server 4",
+        "5.Hysteria2 channel Server 5"
       ],
       "tag": "proxy",
       "type": "selector"
@@ -92,7 +94,10 @@
     {
       "interval": "10m",
       "outbounds": [
-        "Telegram\u0026YouTube:@Mikronet_plus"
+        "2.Hysteria2 channel Server 2",
+        "3.Hysteria2 channel Server 3",
+        "4.Hysteria2 channel Server 4",
+        "5.Hysteria2 channel Server 5"
       ],
       "tag": "auto",
       "tolerance": 50,
@@ -104,25 +109,66 @@
       "type": "direct"
     },
     {
-      "tag": "dns-out",
-      "type": "dns"
-    },
-    {
-      "tag": "block",
-      "type": "block"
+      "obfs": {
+        "password": "\u0026O#28YB5qK!5t#U",
+        "type": "salamander"
+      },
+      "password": "freehomesvpn",
+      "server": "channel2.saghetalaie.homes",
+      "server_port": 46914,
+      "tag": "2.Hysteria2 channel Server 2",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.google.com"
+      },
+      "type": "hysteria2"
     },
     {
       "obfs": {
-        "password": "Telegram:Mikronet_pluss",
+        "password": "\u0026O#28YB5qK!5t#U",
         "type": "salamander"
       },
-      "password": "Telegram:Mikronet-plus",
-      "server": "mikronetplus.mikronetplus.store",
-      "server_port": 3678,
-      "tag": "Telegram\u0026YouTube:@Mikronet_plus",
+      "password": "freehomesvpn",
+      "server": "channel3.saghetalaie.homes",
+      "server_port": 46914,
+      "tag": "3.Hysteria2 channel Server 3",
       "tls": {
         "enabled": true,
-        "insecure": true
+        "insecure": true,
+        "server_name": "www.google.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "obfs": {
+        "password": "\u0026O#28YB5qK!5t#U",
+        "type": "salamander"
+      },
+      "password": "freehomesvpn",
+      "server": "channel4.saghetalaie.homes",
+      "server_port": 46914,
+      "tag": "4.Hysteria2 channel Server 4",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.google.com"
+      },
+      "type": "hysteria2"
+    },
+    {
+      "obfs": {
+        "password": "\u0026O#28YB5qK!5t#U",
+        "type": "salamander"
+      },
+      "password": "freehomesvpn",
+      "server": "channel5.saghetalaie.homes",
+      "server_port": 46914,
+      "tag": "5.Hysteria2 channel Server 5",
+      "tls": {
+        "enabled": true,
+        "insecure": true,
+        "server_name": "www.google.com"
       },
       "type": "hysteria2"
     }
@@ -141,23 +187,9 @@
       {
         "download_detour": "direct",
         "format": "binary",
-        "tag": "geosite-private",
-        "type": "remote",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/private.srs"
-      },
-      {
-        "download_detour": "direct",
-        "format": "binary",
         "tag": "geosite-ir",
         "type": "remote",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ir.srs"
-      },
-      {
-        "download_detour": "direct",
-        "format": "binary",
-        "tag": "geoip-private",
-        "type": "remote",
-        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/private.srs"
       },
       {
         "download_detour": "direct",
@@ -169,10 +201,15 @@
     ],
     "rules": [
       {
+        "action": "sniff"
+      },
+      {
+        "action": "route",
         "clash_mode": "Direct",
         "outbound": "direct"
       },
       {
+        "action": "route",
         "clash_mode": "Global",
         "outbound": "proxy"
       },
@@ -183,10 +220,8 @@
       {
         "outbound": "direct",
         "rule_set": [
-          "geoip-private",
-          "geosite-private",
-          "geoip-ir",
-          "geosite-ir"
+          "geosite-ir",
+          "geoip-ir"
         ]
       },
       {
